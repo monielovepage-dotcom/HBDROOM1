@@ -184,9 +184,9 @@ svg{display:block}
 <script>
 window.BIRTHDAY_CONFIG = {
   id: "hedgehog-lin-26",
-  to: "เม่น",
+  to: "พี่เม่น",
   from: "ลิน",
-  birthday: "2026-11-06",
+  birthday: "2000-11-06",
   candles: { type: "number", age: 26 },
   cake: { flavor: "chocolate", text: "ขอให้อยู่ด้วยกันไปนานๆ" },
   room: "cozy",
@@ -200,7 +200,7 @@ window.BIRTHDAY_CONFIG = {
   ],
   letter: {
     title: "สุขสันต์วันเกิดนะ",
-    body: "ถึงเม่น\n\n26 แล้ว เก่งมากๆ เลยที่ใช้ชีวิตมาถึงตรงนี้ เธอเติบโตมาเป็นคนที่ดีและเก่งมากๆ วันไหนเหนื่อยพักๆ ด้วยนะคะ เธอเป็นคนเก่งของหนูมาตลอด หนูรักพี่มากๆ\n\nดีใจด้วยนะคะ ปีนี้วันเกิดได้อยู่กับครอบครัวแล้ว ขอให้มีชีวิตการงานที่ดี ใครเข้ามาขอให้เขาใจดีกับอ้วน ถ้าเขาไม่ดีใจหนูจะใจดีด้วยเอง เติบโตเป็นที่ดีแบบนี้ไปเรื่อยๆ เลยนะคะ\n\n(หนูส่งของขวัญไปให้แต่ไม่รู้ว่ามันจะถึงทันไหม)",
+    body: "ถึงพี่เม่น\n\n26 แล้ว เก่งมากๆ เลยที่ใช้ชีวิตมาถึงตรงนี้ เธอเติบโตมาเป็นคนที่ดีและเก่งมากๆ วันไหนเหนื่อยพักๆ ด้วยนะคะ เธอเป็นคนเก่งของหนูมาตลอด หนูรักพี่มากๆ\n\nดีใจด้วยนะคะ ปีนี้วันเกิดได้อยู่กับครอบครัวแล้ว ขอให้มีชีวิตการงานที่ดี ใครเข้ามาขอให้เขาใจดีกับอ้วน ถ้าเขาไม่ดีใจหนูจะใจดีด้วยเอง เติบโตเป็นที่ดีแบบนี้ไปเรื่อยๆ เลยนะคะ\n\n(หนูส่งของขวัญไปให้แต่ไม่รู้ว่ามันจะถึงทันไหม)",
     sign: "ลิน"
   },
   gift: { title: "ของขวัญจากลิน", text: "กดปุ่มด้านล่างเพื่อเปิดดูของขวัญ", link: "https://youtu.be/FG2PgVl0Nlc?si=VEQ4xbkPnQDwWiYu" },
@@ -264,7 +264,7 @@ const TAU = Math.PI * 2;
 const V3 = (x, y, z) => new THREE.Vector3(x, y, z);
 function rng(seed){ let s = (seed >>> 0) || 1; return () => ((s = (Math.imul(s, 1664525) + 1013904223) >>> 0) / 4294967296); }
 function hash(str){ let h = 2166136261; str = String(str); for (let i = 0; i < str.length; i++){ h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
-function fmtDate(iso, opt){ if (!iso) return ''; const d = new Date(iso + 'T00:00:00'); if (isNaN(d)) return iso; return d.toLocaleDateString('th-TH', opt || { day: 'numeric', month: 'long', year: 'numeric' }); }
+function fmtDate(iso, opt){ if (!iso) return ''; const d = new Date(iso + 'T00:00:00'); if (isNaN(d)) return iso; return d.toLocaleDateString('th-TH-u-ca-gregory', opt || { day: 'numeric', month: 'long', year: 'numeric' }); }
 function esc(s){ return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
 function fitText(g, s, max){ s = String(s || ''); if (g.measureText(s).width <= max) return s; while (s.length > 1 && g.measureText(s + '…').width > max) s = s.slice(0, -1); return s + '…'; }
 const wait = ms => new Promise(r => setTimeout(r, ms));
